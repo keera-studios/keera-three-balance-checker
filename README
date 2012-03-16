@@ -1,0 +1,17 @@
+Tired of having to wait till Monday to buy a 3 PayG top-up because you live in
+a small town near the end of the world? Not anymore, you won't be!  Because
+thanks to Keera's Three Balance Checker, you'll know how much you've got left
+at all times. Just run it, hover the mouse over the Keera Balance Checker's
+traybar icon and you'll know instantly how much you've got left.
+
+Download, unpack and install hails, then this package.
+Make sure that hails is in your path after you install it, otherwise this won't
+compile. Other dependencies are listed in the cabal file and they can be
+downloaded from Hackage.
+
+If you use this and you like it, drop me a line, blog about it, talk about it.
+If you don't like it, or if it doesn't work, or even if you just want to tell
+me what you think, just drop me a line.
+
+My mail is "ivan.perez@" ++ (drop 2 "mckeera.es"). If you don't know what that
+means, run it in ghci and you'll see.
