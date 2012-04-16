@@ -4,14 +4,28 @@ thanks to Keera's Three Balance Checker, you'll know how much you've got left
 at all times. Just run it, hover the mouse over the Keera Balance Checker's
 traybar icon and you'll know instantly how much you've got left.
 
-Download, unpack and install hails, then this package.
-Make sure that hails is in your path after you install it, otherwise this won't
-compile. Other dependencies are listed in the cabal file and they can be
-downloaded from Hackage.
+INSTALLATION
+
+There are two ways:
+1) Download, unpack and install hails, then this package.
+You can download hails from https://github.com/ivanperez-keera/keera-hails.
+
+Make sure that hails is in your path after you install it,
+otherwise this won't compile. Other dependencies are listed in the
+cabal file and they can be downloaded from Hackage.
+
+2) Use my cabal repo to install this and all the dependencies.
+
+Add the following line to your .cabal/config file, right below remote-repo:
+hackage.haskell.org [...]
+
+remote-repo: ivanperez-keera:http://ivanperez-keera.github.com/packages/archive
+
+Then run cabal update && cabal install keera-three-balance-checker
 
 If you use this and you like it, drop me a line, blog about it, talk about it.
-If you don't like it, or if it doesn't work, or even if you just want to tell
-me what you think, just drop me a line.
+If you don't like it, or if it doesn't work, or even if you just
+want to tell me what you think, just drop me a line.
 
-My mail is "ivan.perez@" ++ (drop 2 "mckeera.es"). If you don't know what that
-means, run it in ghci and you'll see.
+My mail is "ivan.perez@" ++ (drop 2 "mckeera.es"). If you don't
+know what that means, run it in ghci and you'll see.
