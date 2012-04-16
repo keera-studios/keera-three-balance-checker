@@ -1,5 +1,5 @@
 {-# LANGUAGE TemplateHaskell #-}
-module View.MainWindow.Objects where
+module View.Objects where
 
 -- External imports
 import Graphics.UI.Gtk

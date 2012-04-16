@@ -12,7 +12,7 @@ import Hails.MVC.View.GladeView
 import Hails.MVC.View.GtkView as Exported
 
 -- Internal libraries
-import View.MainWindow.Objects
+import View.Objects
 import Three.Balance.Checker
 
 instance GtkGUI View where

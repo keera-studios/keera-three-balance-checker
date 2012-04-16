@@ -71,7 +71,22 @@ Executable keera-three-balance-checker
                  hails, mtl, IfElse, glib
   
   -- Modules not exported by this package.
-  -- Other-modules:       
+  Other-modules: Model.ReactiveModel
+                 Model.ProtectedModel
+                 Model.ProtectedModel.Status
+                 Model.Model
+                 Model.ReactiveModel.ModelEvents
+                 Model.ReactiveModel.Status
+                 Three.Balance.TagSoup
+                 Three.Balance.Checker
+                 Controller.Conditions.Website
+                 Controller.Conditions.BalanceCheck
+                 Controller.Conditions.Quit
+                 Controller.Conditions.PopupMenu
+                 Controller.Conditions
+                 View
+                 View.Objects
+                 Paths
   
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
