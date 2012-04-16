@@ -7,6 +7,7 @@ import Graphics.UI.Gtk
 import Graphics.UI.Gtk.WebKit.WebView
 import Graphics.UI.Gtk.WebKit.WebDataSource
 import Graphics.UI.Gtk.WebKit.WebFrame
+import Graphics.UI.Gtk.WebKit.CacheModel
 -- import Graphics.UI.Gtk.WebKit.Download
 import Three.Balance.TagSoup
 import Text.HTML.TagSoup
@@ -47,6 +48,8 @@ balanceCheckerNew = do
 
   -- Create WebKit view.
   webView <- webViewNew
+
+  setCacheModel CacheModelDocumentBrowser
 
   let url = balanceURL
       wb  = webView
