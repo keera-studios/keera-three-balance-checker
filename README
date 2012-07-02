@@ -8,7 +8,7 @@ INSTALLATION
 
 There are two ways:
 1) Download, unpack and install hails, then this package.
-You can download hails from https://github.com/ivanperez-keera/keera-hails.
+You can download hails from https://github.com/keera-studios/keera-hails.
 
 Make sure that hails is in your path after you install it,
 otherwise this won't compile. Other dependencies are listed in the
