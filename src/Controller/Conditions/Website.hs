@@ -3,7 +3,7 @@ module Controller.Conditions.Website where
 
 import Control.Monad
 import Graphics.UI.Gtk
-import Hails.Graphics.UI.Gtk.Helpers.MessageDialog
+import Graphics.UI.Gtk.Helpers.MessageDialog
 
 import CombinedEnvironment
 import System.Application

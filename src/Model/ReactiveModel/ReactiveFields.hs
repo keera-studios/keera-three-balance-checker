@@ -1,5 +1,5 @@
 {-# LANGUAGE TemplateHaskell #-}
-module Model.ReactiveModel.Status where
+module Model.ReactiveModel.ReactiveFields where
 
 -- External imports
 import qualified Hails.MVC.Model.ReactiveFields as RFs
