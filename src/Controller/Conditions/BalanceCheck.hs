@@ -28,7 +28,6 @@ installHandlers cenv = void $ do
 
 refreshBalanceMV :: CEnv -> IO()
 refreshBalanceMV cenv = onViewAsync $ do
-  let (vw, pm) = (view &&& model) cenv
   icon <- trayIcon $ mainWindowBuilder vw 
 
   curBalance    <- getter lastKnownBalanceField pm 
@@ -45,12 +44,11 @@ refreshBalanceMV cenv = onViewAsync $ do
   getDataFileName imgFn >>= statusIconSetFromFile icon
   statusIconSetTooltip icon tooltip
   statusIconSetVisible icon True
+ where (vw, pm) = (view &&& model) cenv
 
 refreshBalanceVM :: CEnv -> IO()
 refreshBalanceVM cenv = onViewAsync $ do
-  let bc = balanceChecker $ view cenv
-      pm = model cenv
-  st <- readIORef (BC.status bc)
+  st <- readIORef $ BC.status $ balanceChecker vw
       
   let newBalance    = BC.balance st
       newExpiration = BC.expiration st
@@ -66,3 +64,4 @@ refreshBalanceVM cenv = onViewAsync $ do
     setter lastKnownExpirationField pm newExpiration
 
   setter statusField pm newStatus
+ where (vw, pm) = (view &&& model) cenv
