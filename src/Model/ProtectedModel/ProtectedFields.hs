@@ -1,6 +1,6 @@
 {-# LANGUAGE TemplateHaskell #-}
 -- | Access the system's status in a thread-safe way
-module Model.ProtectedModel.Status where
+module Model.ProtectedModel.ProtectedFields where
 
 import           Hails.MVC.Model.THFields
 import           Hails.MVC.Model.ProtectedModel.Reactive

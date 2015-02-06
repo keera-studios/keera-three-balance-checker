@@ -6,7 +6,7 @@ Name:                keera-three-balance-checker
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.1
+Version:             0.0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            A trayicon that notifies you of your Three PayG credit
@@ -66,17 +66,30 @@ Executable keera-three-balance-checker
   -- Packages needed in order to build this package.
   -- Build-depends:       
   --, mtl, stm, containers, filepath, directory, process,
-  Build-depends: glade, gtk, base >= 4.0,
-                 tagsoup, webkit, cmdargs,
-                 hails, mtl, IfElse, glib
+  Build-depends: glade,
+                 gtk,
+                 base >= 4.0,
+                 tagsoup,
+                 webkit,
+                 cmdargs,
+                 mtl,
+                 IfElse,
+                 glib,
+                 hails-reactivevalues,
+                 hails-reactive-gtk,
+                 hails-mvc-environment-gtk,
+                 hails-mvc-model-protectedmodel,
+                 hails-mvc-view,
+                 hails-mvc-view-gtk,
+                 hails-mvc-solutions-gtk,
+                 MissingK,
+                 gtk-helpers
   
   -- Modules not exported by this package.
-  Other-modules: Model.ReactiveModel
-                 Model.ProtectedModel
-                 Model.ProtectedModel.Status
-                 Model.Model
+  Other-modules: Model.Model
+                 Model.ProtectedModel.ProtectedFields
                  Model.ReactiveModel.ModelEvents
-                 Model.ReactiveModel.Status
+                 Model.ReactiveModel.ReactiveFields
                  Three.Balance.TagSoup
                  Three.Balance.Checker
                  Controller.Conditions.Website
@@ -86,7 +99,7 @@ Executable keera-three-balance-checker
                  Controller.Conditions
                  View
                  View.Objects
-                 Paths
+                 Paths.CustomPaths
   
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
