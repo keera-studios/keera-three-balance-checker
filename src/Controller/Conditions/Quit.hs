@@ -1,4 +1,6 @@
--- | Shows the popup menu when the user right-clicks the icon
+-- | Exits the application when requested by the user
+--
+-- (View => IO)
 module Controller.Conditions.Quit where
 
 import Control.Monad

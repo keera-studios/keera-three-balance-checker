@@ -1,4 +1,10 @@
 {-# LANGUAGE PatternGuards #-}
+-- | Checks the status of your Three balance
+--
+-- The BalanceChecker encapsulates a Gtk widget and checks your PayG allowance.
+--
+-- It includes methods to request a balance refresh and detect when a new value
+-- has been obtained.
 module Three.Balance.Checker where
 
 import Control.Monad
@@ -8,10 +14,12 @@ import Graphics.UI.Gtk.WebKit.WebView
 import Graphics.UI.Gtk.WebKit.WebDataSource
 import Graphics.UI.Gtk.WebKit.WebFrame
 import Graphics.UI.Gtk.WebKit.CacheModel
--- import Graphics.UI.Gtk.WebKit.Download
-import Three.Balance.TagSoup
 import Text.HTML.TagSoup
 
+import Three.Balance.TagSoup
+
+-- | Encapsulates a webkit widget, the status and the listeners to execute on
+-- status changes
 data BalanceChecker = BalanceChecker
    { status  :: IORef Status
    , conf    :: IORef Int
@@ -19,6 +27,7 @@ data BalanceChecker = BalanceChecker
    , hndlrs  :: IORef [ IO () ]
    }
 
+-- | Summarizes the status of your PayG balance
 data Status = Status
    { balance    :: Maybe Int
    , expiration :: Maybe String
@@ -26,6 +35,7 @@ data Status = Status
    }
  deriving Show
 
+-- | The three possible states in which the widget can be at each time
 data WebkitStatus = Loading
                   | Idle
                   | Error
@@ -37,12 +47,14 @@ checkBalance bc = webViewLoadUri (webView bc) balanceURL
 balanceURL :: String
 balanceURL = "https://www.three.co.uk/My3Account/MBB_PAYG/Allowance"
 
+-- | Installs a handler to be execute when the status changes
 onStatusChanged :: BalanceChecker -> IO () -> IO ()
 onStatusChanged bc hndl = do
    hndls <- readIORef (hndlrs bc)
    let hndls' = hndls ++ [hndl]
    writeIORef (hndlrs bc) hndls'
   
+-- | Creates a new Balance Checker
 balanceCheckerNew :: IO BalanceChecker
 balanceCheckerNew = do
 
@@ -95,10 +107,11 @@ balanceCheckerNew = do
 
   return bc
 
+-- | Executes the existing status handlers in sequence
 triggerStatusHandlers :: BalanceChecker -> IO()
-triggerStatusHandlers bc =
-  mapM_ id =<< readIORef (hndlrs bc)
+triggerStatusHandlers bc = sequence_ =<< readIORef (hndlrs bc)
 
+-- | Sets the widget status as loading
 threeBalanceLoadStarted :: BalanceChecker -> IO()
 threeBalanceLoadStarted bc = do
     st <- readIORef (status bc)
@@ -106,6 +119,7 @@ threeBalanceLoadStarted bc = do
     writeIORef (status bc) st'
     triggerStatusHandlers bc
 
+-- | Sets the widget status as idle
 threeBalanceLoadIdle :: BalanceChecker -> IO()
 threeBalanceLoadIdle bc = do
     st <- readIORef (status bc)
@@ -113,12 +127,14 @@ threeBalanceLoadIdle bc = do
     writeIORef (status bc) st'
     triggerStatusHandlers bc
 
+--- | Tries to load a page if it's not the current one
 reloadTillNecessary :: WebView -> String -> IO Bool
 reloadTillNecessary webView url = do
   uri <- webViewGetUri webView
   when (uri /= Just url) $ webViewLoadUri webView url
   return (uri == Just url)
   
+-- | Obtains and updates the current balance in the balance checker
 accessBalance :: WebFrame -> BalanceChecker -> IO()
 accessBalance webFrame bc = do
   contents <- webDataSourceGetData =<< webFrameGetDataSource webFrame
@@ -129,6 +145,8 @@ accessBalance webFrame bc = do
                    writeIORef (status bc) st'
     Nothing  -> return ()
   
+-- | Calculates the new status from the contents of the webpage provided by
+-- Three.co.uk when requesting the remaining allowance.
 newStatus :: Status -> [Tag String] -> Status
 newStatus st ts
   | Just (exp, n) <- findBroadbandData ts
