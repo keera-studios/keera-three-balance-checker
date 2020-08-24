@@ -13,9 +13,9 @@ synopsis:            A trayicon that notifies you of your Three PayG credit
 stability:           Provisional
 
 data-files:
-  data/3mobile-sim-card.png,
-  data/3mobile-unknown.png,
-  data/Interface.glade
+    data/3mobile-sim-card.png
+  , data/3mobile-unknown.png
+  , data/Interface.glade
 
 
 -- You can disable the hlint test suite with -f-test-hlint
@@ -51,24 +51,24 @@ executable keera-three-balance-checker
     View.Objects
 
   build-depends:
-    glade,
-    gtk,
-    base >= 4.0,
-    tagsoup,
-    webkit,
-    cmdargs,
-    mtl,
-    IfElse,
-    glib,
-    hails-reactivevalues,
-    hails-reactive-gtk,
-    hails-mvc-environment-gtk,
-    hails-mvc-model-protectedmodel,
-    hails-mvc-view,
-    hails-mvc-view-gtk,
-    hails-mvc-solutions-gtk,
-    MissingK,
-    gtk-helpers
+      base >= 4.0
+    , cmdargs
+    , glade
+    , glib
+    , gtk
+    , gtk-helpers
+    , hails-mvc-environment-gtk
+    , hails-mvc-model-protectedmodel
+    , hails-mvc-solutions-gtk
+    , hails-mvc-view
+    , hails-mvc-view-gtk
+    , hails-reactive-gtk
+    , hails-reactivevalues
+    , IfElse
+    , MissingK
+    , mtl
+    , tagsoup
+    , webkit
 
   default-language:
     Haskell2010
@@ -100,8 +100,8 @@ test-suite hlint
       False
   else
     build-depends:
-      base,
-      hlint >= 1.7
+        base
+      , hlint >= 1.7
 
 -- Verify that the code is thoroughly documented
 test-suite haddock-coverage
@@ -123,8 +123,8 @@ test-suite haddock-coverage
       False
   else
     build-depends:
-      base >= 4 && < 5,
-      directory,
-      filepath,
-      process,
-      regex-posix
+        base >= 4 && < 5
+      , directory
+      , filepath
+      , process
+      , regex-posix
