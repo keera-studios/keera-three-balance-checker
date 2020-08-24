@@ -1,18 +1,17 @@
+cabal-version: >= 1.10
+build-type:          Custom
+
 name:                keera-three-balance-checker
 version:             0.0.2
-synopsis:            A trayicon that notifies you of your Three PayG credit
+author:              Ivan Perez
+maintainer:          ivan.perez@keera.co.uk
 homepage:            http://keera.co.uk/projects/haskellifi-trayicon
 license:             AllRightsReserved
 license-file:        LICENSE
-author:              Ivan Perez
-maintainer:          ivan.perez@keera.co.uk
+category:            Text
+synopsis:            A trayicon that notifies you of your Three PayG credit
 stability:           Provisional
 
-category:            Text
-
-build-type:          Custom
-
-cabal-version: >= 1.10
 
 data-files: data/3mobile-sim-card.png,
             data/3mobile-unknown.png,
