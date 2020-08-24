@@ -1,16 +1,16 @@
 cabal-version: >= 1.10
-build-type:          Custom
+build-type:    Custom
 
-name:                keera-three-balance-checker
-version:             0.0.2
-author:              Ivan Perez
-maintainer:          ivan.perez@keera.co.uk
-homepage:            http://keera.co.uk/projects/haskellifi-trayicon
-license:             AllRightsReserved
-license-file:        LICENSE
-category:            Text
-synopsis:            A trayicon that notifies you of your Three PayG credit
-stability:           Provisional
+name:          keera-three-balance-checker
+version:       0.0.2
+author:        Ivan Perez
+maintainer:    ivan.perez@keera.co.uk
+homepage:      http://keera.co.uk/projects/haskellifi-trayicon
+license:       AllRightsReserved
+license-file:  LICENSE
+category:      Text
+synopsis:      A trayicon that notifies you of your Three PayG credit
+stability:     Provisional
 
 data-files:
     data/3mobile-sim-card.png
@@ -21,12 +21,12 @@ data-files:
 -- You can disable the hlint test suite with -f-test-hlint
 flag test-hlint
   default: False
-  manual: True
+  manual:  True
 
 -- You can disable the haddock coverage test suite with -f-test-doc-coverage
 flag test-doc-coverage
   default: False
-  manual: True
+  manual:  True
 
 
 executable keera-three-balance-checker
@@ -51,7 +51,7 @@ executable keera-three-balance-checker
     View.Objects
 
   build-depends:
-      base >= 4.0
+      base                           >= 4.0
     , cmdargs
     , glade
     , glib
@@ -123,7 +123,7 @@ test-suite haddock-coverage
       False
   else
     build-depends:
-        base >= 4 && < 5
+        base        >= 4 && < 5
       , directory
       , filepath
       , process
