@@ -35,20 +35,20 @@ executable keera-three-balance-checker
     Main.hs
 
   other-modules:
+    Controller.Conditions
+    Controller.Conditions.BalanceCheck
+    Controller.Conditions.PopupMenu
+    Controller.Conditions.Quit
+    Controller.Conditions.Website
     Model.Model
     Model.ProtectedModel.ProtectedFields
     Model.ReactiveModel.ModelEvents
     Model.ReactiveModel.ReactiveFields
-    Three.Balance.TagSoup
+    Paths.CustomPaths
     Three.Balance.Checker
-    Controller.Conditions.Website
-    Controller.Conditions.BalanceCheck
-    Controller.Conditions.Quit
-    Controller.Conditions.PopupMenu
-    Controller.Conditions
+    Three.Balance.TagSoup
     View
     View.Objects
-    Paths.CustomPaths
 
   build-depends:
     glade,
