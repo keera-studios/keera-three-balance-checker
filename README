@@ -1,3 +1,23 @@
+NOTICE
+======
+
+This package is now deprecated. It is kept here for documentation purposes, but
+no changes will be made.
+
+THE AUTHOR PROVIDES THIS SOFTWARE ''AS IS'' AND ANY EXPRESSED OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Balance checker
+===============
+
 Tired of having to wait till Monday to buy a 3 PayG top-up because you live in
 a small town near the end of the world? Not anymore, you won't be!  Because
 thanks to Keera's Three Balance Checker, you'll know how much you've got left
@@ -29,3 +49,11 @@ me what you think, just drop me a line.
 
 My mail is "ivan.perez@" ++ (drop 2 "mckeera.es"). If you don't
 know what that means, run it in ghci and you'll see.
+
+NOTICE
+======
+
+'Three' is a trademark of the three.co.uk group. Keera Studios Ltd makes no
+claims of ownership, relation, partnership, support, engagement, suitability
+and/or sponsorship from/by/of the Three.co.uk group or any companies that
+are part of the Three.co.uk group.
